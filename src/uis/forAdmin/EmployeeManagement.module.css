@@ -1,0 +1,135 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .printerAssignments,
+  .cashierAssignments,
+  .jobCreation,
+  .employeeSelection {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  
+  .printerAssignments h2,
+  .cashierAssignments h2,
+  .jobCreation h2,
+  .employeeSelection h2 {
+    margin-top: 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .employeeSelection select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .employeeSelection form {
+    margin-top: 20px;
+  }
+  
+  .employeeSelection button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .employeeSelection button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .employeeSelection h3 {
+    margin-top: 20px;
+  }
+  
+  .employeeSelection label {
+    display: block;
+    margin-top: 16px;
+    font-weight: bold;
+  }
+  
+  .employeeSelection input[type="text"],
+  .employeeSelection input[type="month"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .employeeSelection input[type="text"][disabled],
+  .employeeSelection input[type="month"][disabled] {
+    background-color: #f2f2f2;
+  }
+  
+  .employeeSelection ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .employeeSelection li {
+    margin-bottom: 20px;
+  }
+  
+  .employeeSelection li h3 {
+    margin-top: 0;
+  }
+  
+  .employeeSelection li p {
+    margin-top: 0;
+  }
+  .jobCreation button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .jobCreation button[type="submit"]:hover {
+    background-color: #45a049;
+  } 
+
+  .assignButton {
+    background-color: #4CAF50;
+    width: fit-content;
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  

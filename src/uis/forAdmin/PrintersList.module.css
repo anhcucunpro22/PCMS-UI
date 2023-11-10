@@ -1,0 +1,48 @@
+.container {
+    width: 58%;
+    margin: 90px auto 60px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .totalAmount {
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  .totalOrders {
+    text-align: right;
+    font-weight: bold;
+  }
+
+  .working {
+    font-weight: bold;
+    color: #4caf50;
+  }
+  .unfixed {
+    font-weight: bold;
+    color: red;
+  }

@@ -1,0 +1,65 @@
+  .whole {
+    display: flex;
+    margin-bottom: 80px;
+  }
+  
+  .cashierForm {
+    width: 480px;
+    margin: 70px 20px 0 28%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+  
+  .cashierInput {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .cashierSubmit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .cashierSubmit:hover {
+    background-color: #45a049;
+  }
+  
+  .cashierContainer {
+    width: 280px;
+    height: min-content;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 70px -90px 90px 0;
+    padding: 16px;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+  }
+
+  .cashierContainer h3 {
+    margin-left: -20px;
+  }
+  
+  .cashierTotal {
+    margin:  0 0 0 20px;
+    text-align: left;
+    width: 100px;
+  }
+  
+  .nextCustomer {
+    background-color: #fff;
+    color: #000;
+    padding: 14px 20px;
+  }
