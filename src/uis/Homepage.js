@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Homepage.module.css';
-import Card from './card/Card';
-import PrintingShop from './forTypical Users/PrintingShop';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "./Homepage.module.css";
+import Card from "./card/Card";
+import PrintingShop from "./forTypical Users/PrintingShop";
 
 const Homepage = ({ isLoggedIn, isAdmin, isCashier, handleLogout }) => {
+  const [role, setRole] = useState("");
+
+  const handleRoleChange = (event) => {
+    setRole(event.target.value);
+  };
+
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -15,11 +21,17 @@ const Homepage = ({ isLoggedIn, isAdmin, isCashier, handleLogout }) => {
         </h1>
 
         <nav className={styles.menu}>
-          {(isLoggedIn && !isAdmin && !isCashier) && (
+          {isLoggedIn && !isAdmin && !isCashier && (
             <div>
-              <Link to='/printing-shop' className={styles.menuButton}>Shop</Link>
+              <Link to="/printing-shop" className={styles.menuButton}>
+                Shop
+              </Link>
               <Link to="/users-order-history" className={styles.menuButton}>
                 My Order History
+              </Link>
+
+              <Link to="/personal-information" className={styles.menuButton}>
+                Personal Information
               </Link>
               <button className={styles.menuButton} onClick={handleLogout}>
                 Logout
@@ -39,9 +51,16 @@ const Homepage = ({ isLoggedIn, isAdmin, isCashier, handleLogout }) => {
               <Link to="/employeeManage" className={styles.menuButton}>
                 Manage Employee
               </Link>
-              <Link to='/printersList' className={styles.menuButton}>Printer(s)</Link>
-              <Link to='/debt-management' className={styles.menuButton}>Debt Management</Link>
-              <Link to="/order-history-manage-by-date" className={styles.menuButton}>
+              <Link to="/printersList" className={styles.menuButton}>
+                Printer(s)
+              </Link>
+              <Link to="/debt-management" className={styles.menuButton}>
+                Debt Management
+              </Link>
+              <Link
+                to="/order-history-manage-by-date"
+                className={styles.menuButton}
+              >
                 Order history by date
               </Link>
               <Link to="/productsManage" className={styles.menuButton}>
@@ -54,7 +73,10 @@ const Homepage = ({ isLoggedIn, isAdmin, isCashier, handleLogout }) => {
           )}
           {isLoggedIn && isCashier && (
             <div>
-              <Link to="/order-history-manage-by-date" className={styles.menuButton}>
+              <Link
+                to="/order-history-manage-by-date"
+                className={styles.menuButton}
+              >
                 Order history by date
               </Link>
               <Link to="/check-out-for-cashier" className={styles.menuButton}>

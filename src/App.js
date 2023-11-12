@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUp from "./uis/SignUp";
 import Login from "./uis/Login";
@@ -18,6 +18,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWrench } from "@fortawesome/free-solid-svg-icons";
 import DebtManagement from "./uis/forAdmin/DebtManagement";
 import CheckOut from "./uis/forTypical Users/CheckOut";
+import WelcomePage from "./uis/forTypical Users/WelcomePage";
+import LogoutForAll from "./uis/LogoutForAll";
+import PersonalInformation from "./uis/forTypical Users/PersonalInformation";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(
@@ -36,21 +39,53 @@ function App() {
     setIsLoggedIn(false);
     setIsAdmin(false);
     setIsCashier(false);
-    localStorage.removeItem("isLoggedIn");
+    // localStorage.removeItem("isLoggedIn");
+    // localStorage.removeItem("userData");
+    localStorage.clear();
+    window.location.href = "/logout";
   };
+
+  // useEffect(() => {
+  // const isLoggedIn = localStorage.getItem("isLoggedIn");
+  //   if (isLoggedIn) {
+  //     <Homepage
+  //       isLoggedIn={true}
+  //       isAdmin={false}
+  //       isCashier={false}
+  //       handleLogout={handleLogout}
+  //     />;
+  //   } else {
+  //     <Homepage
+  //       isLoggedIn={false}
+  //       isAdmin={false}
+  //       isCashier={false}
+  //       handleLogout={handleLogout}
+  //     />;
+  //   }
+  // }, []);
 
   return (
     <BrowserRouter>
-      <Homepage
-        isLoggedIn={false}
-        isAdmin={false}
-        isCashier={false}
-        handleLogout={handleLogout}
-      />
+      {localStorage.getItem("isLoggedIn") ? (
+        <Homepage
+          isLoggedIn={true}
+          isAdmin={false}
+          isCashier={false}
+          handleLogout={handleLogout}
+        />
+      ) : (
+        <Homepage
+          isLoggedIn={false}
+          isAdmin={false}
+          isCashier={false}
+          handleLogout={handleLogout}
+        />
+      )}
 
       <Routes>
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/logout" element={<LogoutForAll />} />
 
         <Route path="/managePastOrd" element={<ManagePastOrders />} />
         <Route path="/printersList" element={<PrintersList />} />
@@ -60,7 +95,9 @@ function App() {
           path="/order-history-manage-by-date"
           element={<OrderHistoryByDate />}
         />
+        <Route path="/personal-information" element={<PersonalInformation />} />
         <Route path="/debt-management" element={<DebtManagement />} />
+        <Route path="/welcome" element={<WelcomePage />} />
         <Route
           path="/users-order-history"
           element={<TypicalUsersOrdHistory />}

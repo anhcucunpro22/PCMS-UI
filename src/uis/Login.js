@@ -30,6 +30,8 @@ const Login = () => {
       Designation: "",
       UserMessage: "",
       AccessToken: "",
+      IsActive: true,
+      Notes: "",
     };
 
     // let jwttoken =
@@ -44,13 +46,25 @@ const Login = () => {
       .then((result) => {
         alert(result.UserMessage);
         console.log(result);
-        if (result.UserMessage === "Login Success") {
-          window.location.href = "/printersList";
+
+        if (result._userData.UserMessage === "Login Success") {
+          localStorage.setItem("isLoggedIn", true);
+          localStorage.setItem("userData", JSON.stringify(result));
+          window.location.href = "/welcome";
+        } else {
+          alert("unsuccessful");
         }
       })
       .catch((error) => {
-        setErrorMessage("An error occurred. Please try again later.");
+        alert("Login unsuccessful");
       });
+    // .catch((error) => {
+    //   if (error.response && error.response.status === 400) {
+    //     setErrorMessage(error.toString());
+    //   } else {
+    //     alert("An error occurred. Please try again later.");
+    //   }
+    // });
   };
 
   return (
